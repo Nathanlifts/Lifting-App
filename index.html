@@ -121,6 +121,29 @@ tr.cur td{color:var(--accent);font-weight:700}
 .iopt.on{border-color:#e5484d;background:#2a1a1c}
 .inote{font-size:13px;color:var(--muted);line-height:1.45;background:var(--card);border-radius:12px;padding:10px 12px;margin-bottom:14px}
 .iclear{display:block;width:100%;padding:12px;border-radius:10px;background:var(--card);font-size:14px;color:var(--muted)}
+.ckbtn{border-color:var(--good)}
+.ckbtn span{color:var(--good)}
+.up{font-size:13px;color:var(--good);margin-bottom:6px;font-weight:600}
+.set input.need{border-color:#e5484d;background:#2a1a1c}
+.tab.skip b::after{content:" skipped";color:var(--muted);font-weight:400;font-size:11px}
+.skipnote{background:var(--card);border-radius:14px;padding:16px;text-align:center;color:var(--muted);margin-bottom:10px}
+.fld{background:var(--card);border-radius:12px;padding:10px 12px;margin-bottom:8px}
+.fld label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+.fld input,.fld textarea{width:100%;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;font-size:17px;padding:10px 12px}
+.fld textarea{min-height:80px;font-size:15px}
+.scale{display:grid;grid-template-columns:repeat(11,1fr);gap:3px}
+.scale button{height:38px;border-radius:8px;background:var(--bg);border:1px solid var(--line);font-size:13px;padding:0}
+.scale button.on{background:var(--accent);border-color:var(--accent);color:#1a1200;font-weight:800}
+.scale.knee button.on{background:#e5484d;border-color:#e5484d;color:#fff}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.bigbtn{display:block;width:100%;padding:14px;border-radius:12px;background:var(--accent);color:#1a1200;font-weight:800;font-size:16px;margin:6px 0 8px}
+.ghost{display:block;width:100%;padding:12px;border-radius:12px;background:var(--card);color:var(--muted);font-size:14px;margin-bottom:8px}
+.copied{color:var(--good);font-size:13px;text-align:center;min-height:18px}
+.trk{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
+.trk button{padding:8px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13px;color:var(--muted)}
+.trk button.on{border-color:var(--accent);color:var(--accent)}
+.stat{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin:2px 0}
+.stat b{color:var(--text)}
 </style>
 </head>
 <body>
@@ -156,6 +179,8 @@ tr.cur td{color:var(--accent);font-weight:700}
 
 <script>
 const KEY = 'fb3x_log_v1';
+// Nathan's log up to week 9 Wednesday (25 Nov 2026). Used only when this device has no saved log yet.
+const SEED = {"week":9,"day":"wed","logs":{"1|mon|bench":[{"kg":"70","reps":"9","done":true}],"1|mon|pullup":[{"kg":"0","reps":"7","done":true}],"1|mon|ohp":[{"kg":"40","reps":"9","done":true}],"1|mon|rdl":[{"kg":"70","reps":"12","done":true}],"1|mon|shrug":[{"kg":"70","reps":"16","done":true}],"1|mon|lat":[{"kg":"12.5","reps":"15","done":true}],"1|mon|rdfly":[{"kg":"70","reps":"10","done":true}],"1|mon|curl":[{"kg":"30","reps":"16","done":true}],"1|mon|skull":[{"kg":"30","reps":"10","done":true}],"1|mon|calf":[{"kg":"20","reps":"18","done":true}],"1|mon|wcurl":[{"kg":"40","reps":"29","done":true}],"1|mon|wext":[{"kg":"25","reps":"16","done":true}],"1|wed|legpress":[{"kg":"80","reps":"20","done":true}],"1|wed|incdb":[{"kg":"20","reps":"20","done":true}],"1|wed|pulldown":[{"kg":"65","reps":"14","done":true}],"1|wed|seatcurl":[{"kg":"60","reps":"17","done":true}],"1|wed|lat":[{"kg":"6","reps":"20","done":true}],"1|wed|curl":[{"kg":"25","reps":"23","done":true}],"1|wed|pushdown":[{"kg":"25","reps":"23","done":true}],"1|wed|rdfly":[{"kg":"50","reps":"16","done":true}],"1|wed|wcurl":[{"kg":"45","reps":"24","done":true}],"1|wed|wext":[{"kg":"30","reps":"20","done":true}],"1|wed|calf":[{"kg":"20","reps":"22","done":true}],"1|mon|squat":[{"kg":"0","reps":"0","done":true}],"1|fri|hack":[{"kg":"30","reps":"10","done":true}],"1|fri|chestpress":[{"kg":"70","reps":"16","done":true}],"1|fri|csrow":[{"kg":"60","reps":"11","done":true}],"1|fri|dbpress":[{"kg":"25","reps":"12","done":true}],"1|fri|lyingcurl":[{"kg":"50","reps":"11","done":true}],"1|fri|shrug":[{"kg":"25","reps":"22","done":true}],"1|fri|lat":[{"kg":"12.5","reps":"16","done":true}],"1|fri|rdfly":[{"kg":"70","reps":"12","done":true}],"1|fri|curl":[{"kg":"10","reps":"16","done":true}],"1|fri|calf":[{"kg":"100","reps":"17","done":true}],"1|fri|ohext":[{"kg":"40","reps":"10","done":true}],"1|fri|wcurl":[{"kg":"35","reps":"31","done":true}],"1|fri|wext":[{"kg":"20","reps":"16","done":true}],"2|mon|squat":[{"kg":"60","reps":"8","done":true},{"kg":"60","reps":"8","done":true}],"2|mon|bench":[{"kg":"72.5","reps":"8","done":true},{"kg":"72.5","reps":"7","done":true}],"2|mon|pullup":[{"kg":"0","reps":"7","done":true},{"kg":"0","reps":"5","done":true}],"2|mon|ohp":[{"kg":"45","reps":"9","done":true},{"kg":"45","reps":"6","done":true}],"2|mon|rdl":[{"kg":"80","reps":"12","done":true},{"kg":"90","reps":"8","done":true}],"2|mon|shrug":[{"kg":"90","reps":"14","done":true},{"kg":"90","reps":"12","done":true}],"2|mon|lat":[{"kg":"15","reps":"11","done":true},{"kg":"15","reps":"10","done":true}],"2|mon|curl":[{"kg":"35","reps":"13","done":true},{"kg":"30","reps":"13","done":true}],"2|mon|skull":[{"kg":"30","reps":"13","done":true},{"kg":"30","reps":"7","done":true}],"2|mon|rdfly":[{"kg":"80","reps":"8","done":true},{"kg":"70","reps":"8","done":true}],"2|mon|calf":[{"kg":"30","reps":"20","done":true},{"kg":"30","reps":"15","done":true}],"2|mon|wcurl":[{"kg":"45","reps":"25","done":true},{"kg":"45","reps":"12","done":true}],"2|mon|wext":[{"kg":"20","reps":"15","done":true},{"kg":"15","reps":"15","done":true}],"2|wed|legpress":[{"kg":"90","reps":"20","done":true}],"2|wed|incdb":[{"kg":"22.5","reps":"15","done":true}],"2|wed|pulldown":[{"kg":"65","reps":"15","done":true}],"2|wed|seatcurl":[{"kg":"60","reps":"15","done":true}],"2|wed|lat":[{"kg":"6","reps":"22","done":true}],"2|wed|rdfly":[{"kg":"5","reps":"18","done":true}],"2|wed|curl":[{"kg":"30","reps":"22","done":true}],"2|wed|pushdown":[{"kg":"30","reps":"21","done":true}],"2|wed|wcurl":[{"kg":"50","reps":"20","done":true}],"2|wed|wext":[{"kg":"30","reps":"15","done":true}],"2|wed|calf":[{"kg":"40","reps":"20","done":true}],"2|fri|hack":[{"kg":"120","reps":"20","done":true}],"2|fri|chestpress":[{"kg":"75","reps":"12","done":true}],"2|fri|csrow":[{"kg":"60","reps":"13","done":true}],"2|fri|dbpress":[{"kg":"26","reps":"8","done":true}],"2|fri|shrug":[{"kg":"27.5","reps":"18","done":true}],"2|fri|lat":[{"kg":"13.75","reps":"13","done":true}],"2|fri|lyingcurl":[{"kg":"50","reps":"14","done":true}],"2|fri|rdfly":[{"kg":"70","reps":"10","done":true}],"2|fri|curl":[{"kg":"12.5","reps":"12","done":true}],"2|fri|ohext":[{"kg":"40","reps":"14","done":true}],"2|fri|calf":[{"kg":"110","reps":"18","done":true}],"2|fri|wcurl":[{"kg":"55","reps":"18","done":true}],"2|fri|wext":[{"kg":"15","reps":"21","done":true}],"3|mon|squat":[{"kg":"65","reps":"10","done":true},{"kg":"70","reps":"10","done":true}],"3|mon|bench":[{"kg":"75","reps":"6","done":true},{"kg":"70","reps":"8","done":true}],"3|mon|pullup":[{"kg":"0","reps":"7","done":true},{"kg":"0","reps":"5","done":true}],"3|mon|ohp":[{"kg":"47.5","reps":"8","done":true},{"kg":"45","reps":"6","done":true}],"3|mon|rdl":[{"kg":"90","reps":"12","done":true},{"kg":"90","reps":"10","done":true}],"3|mon|shrug":[{"kg":"95","reps":"15","done":true},{"kg":"95","reps":"14","done":true}],"3|mon|lat":[{"kg":"15","reps":"12","done":true},{"kg":"15","reps":"8","done":true}],"3|mon|rdfly":[{"kg":"80","reps":"5","done":true},{"kg":"60","reps":"7","done":true}],"3|mon|curl":[{"kg":"37.5","reps":"13","done":true},{"kg":"32.5","reps":"10","done":true}],"3|mon|skull":[{"kg":"32.5","reps":"11","done":true},{"kg":"30","reps":"11","done":true}],"3|mon|wcurl":[{"kg":"55","reps":"18","done":true},{"kg":"50","reps":"12","done":true}],"3|mon|wext":[{"kg":"20","reps":"12","done":true},{"kg":"15","reps":"12","done":true}],"3|mon|calf":[{"kg":"50","reps":"18","done":true},{"kg":"50","reps":"10","done":true}],"3|wed|legpress":[{"kg":"100","reps":"24","done":true}],"3|wed|incdb":[{"kg":"25","reps":"15","done":true}],"3|wed|pulldown":[{"kg":"70","reps":"12","done":true}],"3|wed|seatcurl":[{"kg":"62.5","reps":"12","done":true}],"3|wed|lat":[{"kg":"6","reps":"25","done":true}],"3|wed|rdfly":[{"kg":"50","reps":"15","done":true}],"3|wed|curl":[{"kg":"35","reps":"21","done":true}],"3|wed|pushdown":[{"kg":"35","reps":"20","done":true}],"3|wed|calf":[{"kg":"40","reps":"20","done":true}],"3|wed|wcurl":[{"kg":"50","reps":"0","done":true}],"3|wed|wext":[{"kg":"30","reps":"0","done":true}],"3|fri|hack":[{"kg":"140","reps":"12","done":true},{"kg":"150","reps":"11","done":true}],"3|fri|chestpress":[{"kg":"76.5","reps":"10","done":true},{"kg":"70","reps":"8","done":true}],"3|fri|csrow":[{"kg":"61.25","reps":"12","done":true},{"kg":"61.25","reps":"10","done":true}],"3|fri|dbpress":[{"kg":"26","reps":"8","done":true},{"kg":"24","reps":"8","done":true}],"3|fri|lyingcurl":[{"kg":"55","reps":"12","done":true},{"kg":"55","reps":"7","done":true}],"3|fri|shrug":[{"kg":"30","reps":"15","done":true},{"kg":"30","reps":"14","done":true}],"3|fri|curl":[{"kg":"14","reps":"12","done":true},{"kg":"14","reps":"6","done":true}],"3|fri|lat":[{"kg":"13.75","reps":"14","done":true},{"kg":"12.5","reps":"11","done":true}],"3|fri|ohext":[{"kg":"45","reps":"7","done":true},{"kg":"40","reps":"7","done":true}],"3|fri|rdfly":[{"kg":"60","reps":"12","done":true},{"kg":"50","reps":"8","done":true}],"3|fri|calf":[{"kg":"120","reps":"16","done":true},{"kg":"120","reps":"12","done":true}],"3|fri|wcurl":[{"kg":"57.5","reps":"15","done":true},{"kg":"55","reps":"15","done":true}],"3|fri|wext":[{"kg":"17.5","reps":"15","done":true},{"kg":"15","reps":"15","done":true}],"4|mon|bench":[{"kg":"75","reps":"6","done":true},{"kg":"70","reps":"8","done":true}],"4|mon|pullup":[{"kg":"0","reps":"7","done":true},{"kg":"0","reps":"5","done":true}],"4|mon|ohp":[{"kg":"50","reps":"6","done":true},{"kg":"45","reps":"7","done":true}],"4|mon|rdl":[{"kg":"100","reps":"8","done":true},{"kg":"100","reps":"8","done":true}],"4|mon|shrug":[{"kg":"100","reps":"12","done":true},{"kg":"100","reps":"13","done":true}],"4|mon|lat":[{"kg":"16.25","reps":"11","done":true},{"kg":"15","reps":"8","done":true}],"4|mon|rdfly":[{"kg":"70","reps":"5","done":true},{"kg":"50","reps":"10","done":true}],"4|mon|curl":[{"kg":"40","reps":"6","done":true},{"kg":"35","reps":"12","done":true}],"4|mon|skull":[{"kg":"35","reps":"8","done":true},{"kg":"32.5","reps":"6","done":true}],"4|mon|wcurl":[{"kg":"60","reps":"16","done":true},{"kg":"55","reps":"14","done":true}],"4|mon|wext":[{"kg":"20","reps":"12","done":true},{"kg":"15","reps":"14","done":true}],"4|mon|calf":[{"kg":"0","reps":"18","done":true},{"kg":"0","reps":"16","done":true}],"4|wed|legpress":[{"kg":"120","reps":"20","done":true},{"kg":"120","reps":"16","done":true}],"4|mon|squat":[{"kg":"65","reps":"","done":true},{"kg":"70","reps":"","done":true}],"4|wed|incdb":[{"kg":"27.5","reps":"12","done":true},{"kg":"25","reps":"9","done":true}],"4|wed|seatcurl":[{"kg":"62.5","reps":"12","done":true},{"kg":"62.5","reps":"12","done":true}],"4|wed|pulldown":[{"kg":"70","reps":"12","done":true},{"kg":"65","reps":"10","done":true}],"4|wed|lat":[{"kg":"7.5","reps":"20","done":true},{"kg":"6","reps":"16","done":true}],"4|wed|pushdown":[{"kg":"40","reps":"15","done":true},{"kg":"35","reps":"9","done":true}],"4|wed|curl":[{"kg":"40","reps":"17","done":true},{"kg":"35","reps":"14","done":true}],"4|wed|rdfly":[{"kg":"50","reps":"16","done":true},{"kg":"40","reps":"16","done":true}],"4|wed|calf":[{"kg":"0","reps":"22","done":true},{"kg":"0","reps":"15","done":true}],"4|wed|wcurl":[{"kg":"50","reps":"","done":true},{"kg":"50","reps":"","done":true}],"4|wed|wext":[{"kg":"30","reps":"","done":true},{"kg":"30","reps":"","done":true}],"4|fri|hack":[{"kg":"160","reps":"15","done":true},{"kg":"160","reps":"12","done":true}],"4|fri|chestpress":[{"kg":"50","reps":"12","done":true},{"kg":"50","reps":"12","done":true}],"4|fri|csrow":[{"kg":"62.5","reps":"12","done":true},{"kg":"62.5","reps":"9","done":true}],"4|fri|dbpress":[{"kg":"25","reps":"10","done":true},{"kg":"22.5","reps":"8","done":true}],"4|fri|lyingcurl":[{"kg":"50","reps":"12","done":true},{"kg":"50","reps":"10","done":true}],"4|fri|shrug":[{"kg":"32.5","reps":"15","done":true},{"kg":"32.5","reps":"13","done":true}],"4|fri|lat":[{"kg":"7.5","reps":"10","done":true},{"kg":"5","reps":"10","done":true}],"4|fri|rdfly":[{"kg":"60","reps":"","done":true},{"kg":"50","reps":"","done":true}],"4|fri|curl":[{"kg":"14","reps":"","done":true},{"kg":"14","reps":"","done":true}],"4|fri|ohext":[{"kg":"45","reps":"","done":true},{"kg":"40","reps":"","done":true}],"4|fri|calf":[{"kg":"120","reps":"","done":true},{"kg":"120","reps":"","done":true}],"4|fri|wcurl":[{"kg":"57.5","reps":"","done":true},{"kg":"55","reps":"","done":true}],"4|fri|wext":[{"kg":"17.5","reps":"","done":true},{"kg":"15","reps":"","done":true}],"5|mon|squat":[{"kg":"70","reps":"8","done":true},{"kg":"70","reps":"","done":true},{"kg":"70","reps":"","done":true}],"5|mon|bench":[{"kg":"75","reps":"7","done":true},{"kg":"70","reps":"8","done":true},{"kg":"70","reps":"8","done":true}],"5|mon|pullup":[{"kg":"0","reps":"8","done":true},{"kg":"0","reps":"6","done":true},{"kg":"0","reps":"5","done":true}],"5|mon|ohp":[{"kg":"50","reps":"7","done":true},{"kg":"45","reps":"8","done":true},{"kg":"45","reps":"5","done":true}],"5|mon|rdl":[{"kg":"100","reps":"8","done":true},{"kg":"100","reps":"8","done":true},{"kg":"100","reps":"8","done":true}],"5|mon|shrug":[{"kg":"105","reps":"10","done":true},{"kg":"105","reps":"8","done":true},{"kg":"100","reps":"8","done":true}],"5|mon|lat":[{"kg":"16.25","reps":"12","done":true},{"kg":"15","reps":"10","done":true},{"kg":"15","reps":"8","done":true}],"5|mon|rdfly":[{"kg":"10","reps":"10","done":true},{"kg":"10","reps":"10","done":true},{"kg":"10","reps":"8","done":true}],"5|mon|skull":[{"kg":"35","reps":"8","done":true},{"kg":"30","reps":"8","done":true},{"kg":"30","reps":"6","done":true}],"5|mon|calf":[{"kg":"0","reps":"","done":true},{"kg":"0","reps":"","done":true},{"kg":"0","reps":"","done":true}],"5|mon|wcurl":[{"kg":"60","reps":"","done":true},{"kg":"55","reps":"","done":true},{"kg":"55","reps":"","done":true}],"5|mon|wext":[{"kg":"20","reps":"","done":true},{"kg":"15","reps":"","done":true},{"kg":"15","reps":"","done":true}],"5|mon|curl":[{"kg":"37.5","reps":"12","done":true},{"kg":"37.5","reps":"10","done":true},{"kg":"35","reps":"7","done":true}],"5|fri|chestpress":[{"kg":"76.5","reps":"12","done":true},{"kg":"76.5","reps":"8","done":true}],"5|fri|csrow":[{"kg":"63.75","reps":"12","done":true},{"kg":"63.75","reps":"10","done":true}],"5|fri|dbpress":[{"kg":"25","reps":"11","done":true},{"kg":"22","reps":"10","done":true}],"5|fri|lyingcurl":[{"kg":"51.5","reps":"13","done":true},{"kg":"51.5","reps":"9","done":true}],"5|fri|shrug":[{"kg":"34","reps":"14","done":true},{"kg":"34","reps":"11","done":true}],"5|fri|lat":[{"kg":"13.75","reps":"13","done":true},{"kg":"12.5","reps":"12","done":true}],"5|fri|rdfly":[{"kg":"60","reps":"12","done":true},{"kg":"50","reps":"9","done":true}],"5|fri|curl":[{"kg":"15","reps":"11","done":true},{"kg":"12.5","reps":"10","done":true}],"5|fri|ohext":[{"kg":"25","reps":"13","done":true},{"kg":"25","reps":"7","done":true}],"5|fri|calf":[{"kg":"130","reps":"16","done":true},{"kg":"130","reps":"15","done":true}],"5|fri|wcurl":[{"kg":"57.5","reps":"18","done":true},{"kg":"55","reps":"18","done":true}],"5|fri|wext":[{"kg":"17.5","reps":"15","done":true},{"kg":"15","reps":"15","done":true}],"5|wed|incdb":[{"kg":"27.5","reps":"","done":true},{"kg":"25","reps":"","done":true}],"5|wed|pulldown":[{"kg":"70","reps":"","done":true},{"kg":"65","reps":"","done":true}],"5|wed|seatcurl":[{"kg":"62.5","reps":"","done":true},{"kg":"62.5","reps":"","done":true}],"5|wed|lat":[{"kg":"7.5","reps":"","done":true},{"kg":"6","reps":"","done":true}],"5|wed|rdfly":[{"kg":"50","reps":"","done":true},{"kg":"40","reps":"","done":true}],"5|wed|curl":[{"kg":"40","reps":"","done":true},{"kg":"35","reps":"","done":true}],"5|wed|pushdown":[{"kg":"40","reps":"","done":true},{"kg":"35","reps":"","done":true}],"5|wed|calf":[{"kg":"0","reps":"","done":true},{"kg":"0","reps":"","done":true}],"5|wed|wcurl":[{"kg":"50","reps":"","done":true},{"kg":"50","reps":"","done":true}],"5|wed|wext":[{"kg":"30","reps":"","done":true},{"kg":"30","reps":"","done":true}],"6|mon|bench":[{"kg":"75","reps":"7","done":true},{"kg":"70","reps":"8","done":true},{"kg":"70","reps":"8","done":true}],"6|mon|pullup":[{"kg":"0","reps":"8","done":true},{"kg":"0","reps":"6","done":true},{"kg":"0","reps":"5","done":true}],"6|mon|ohp":[{"kg":"50","reps":"7","done":true},{"kg":"45","reps":"8","done":true},{"kg":"45","reps":"5","done":true}],"6|mon|rdl":[{"kg":"102.5","reps":"8","done":true},{"kg":"102.5","reps":"8","done":true},{"kg":"102.5","reps":"8","done":true}],"6|mon|shrug":[{"kg":"107.5","reps":"10","done":true},{"kg":"107.5","reps":"10","done":true},{"kg":"107.5","reps":"8","done":true}],"6|mon|lat":[{"kg":"16.25","reps":"12","done":true},{"kg":"15","reps":"12","done":true},{"kg":"15","reps":"10","done":true}],"6|mon|rdfly":[{"kg":"10","reps":"10","done":true},{"kg":"10","reps":"10","done":true},{"kg":"10","reps":"8","done":true}],"6|mon|curl":[{"kg":"50","reps":"7","done":true},{"kg":"45","reps":"7","done":true},{"kg":"40","reps":"8","done":true}],"6|mon|skull":[{"kg":"35","reps":"10","done":true},{"kg":"30","reps":"10","done":true},{"kg":"30","reps":"6","done":true}],"6|mon|calf":[{"kg":"0","reps":"20","done":true},{"kg":"0","reps":"16","done":true},{"kg":"0","reps":"16","done":true}],"6|mon|wcurl":[{"kg":"60","reps":"15","done":true},{"kg":"55","reps":"15","done":true},{"kg":"50","reps":"10","done":true}],"6|mon|wext":[{"kg":"20","reps":"15","done":true},{"kg":"15","reps":"15","done":true},{"kg":"15","reps":"10","done":true}],"6|wed|incdb":[{"kg":"27.5","reps":"11","done":true},{"kg":"25","reps":"12","done":true}],"6|wed|pulldown":[{"kg":"70","reps":"12","done":true},{"kg":"60","reps":"12","done":true}],"6|wed|seatcurl":[{"kg":"51.5","reps":"15","done":true},{"kg":"51.5","reps":"10","done":true}],"6|wed|lat":[{"kg":"8","reps":"21","done":true},{"kg":"6","reps":"20","done":true}],"6|wed|rdfly":[{"kg":"50","reps":"14","done":true},{"kg":"40","reps":"21","done":true}],"6|wed|curl":[{"kg":"40","reps":"20","done":true},{"kg":"35","reps":"14","done":true}],"6|wed|pushdown":[{"kg":"40","reps":"16","done":true},{"kg":"35","reps":"14","done":true}],"6|wed|wcurl":[{"kg":"50","reps":"20","done":true},{"kg":"15","reps":"13","done":true}],"6|wed|wext":[{"kg":"10","reps":"21","done":true},{"kg":"10","reps":"20","done":true}],"6|wed|calf":[{"kg":"0","reps":"22","done":true},{"kg":"0","reps":"20","done":true}],"6|fri|chestpress":[{"kg":"76.5","reps":"13","done":true},{"kg":"76.5","reps":"8","done":true},{"kg":"70","reps":"8","done":true}],"6|fri|csrow":[{"kg":"65","reps":"12","done":true},{"kg":"65","reps":"8","done":true},{"kg":"60","reps":"9","done":true}],"6|fri|dbpress":[{"kg":"25","reps":"12","done":true},{"kg":"25","reps":"8","done":true},{"kg":"20","reps":"9","done":true}],"6|fri|lyingcurl":[{"kg":"55","reps":"13","done":true},{"kg":"55","reps":"8","done":true},{"kg":"45","reps":"10","done":true}],"6|fri|shrug":[{"kg":"34","reps":"16","done":true},{"kg":"34","reps":"13","done":true},{"kg":"34","reps":"12","done":true}],"6|fri|rdfly":[{"kg":"60","reps":"12","done":true},{"kg":"50","reps":"11","done":true},{"kg":"40","reps":"12","done":true}],"6|fri|lat":[{"kg":"13.75","reps":"13","done":true},{"kg":"12.5","reps":"12","done":true},{"kg":"10","reps":"12","done":true}],"6|fri|ohext":[{"kg":"40","reps":"16","done":true},{"kg":"40","reps":"8","done":true},{"kg":"35","reps":"8","done":true}],"6|fri|curl":[{"kg":"15","reps":"12","done":true},{"kg":"12","reps":"10","done":true},{"kg":"10","reps":"12","done":true}],"6|fri|calf":[{"kg":"140","reps":"18","done":true},{"kg":"140","reps":"16","done":true},{"kg":"","reps":"","done":false}],"6|fri|wcurl":[{"kg":"57.5","reps":"","done":true},{"kg":"55","reps":"","done":true},{"kg":"55","reps":"","done":true}],"6|fri|wext":[{"kg":"17.5","reps":"","done":true},{"kg":"15","reps":"","done":true},{"kg":"15","reps":"","done":true}],"7|mon|pullup":[{"kg":"0","reps":"8","done":true},{"kg":"0","reps":"6","done":true},{"kg":"0","reps":"6","done":true}],"7|mon|bench":[{"kg":"75","reps":"8","done":true},{"kg":"70","reps":"8","done":true},{"kg":"70","reps":"7","done":true}],"7|mon|ohp":[{"kg":"50","reps":"6","done":true},{"kg":"45","reps":"8","done":true},{"kg":"40","reps":"6","done":true}],"7|mon|rdl":[{"kg":"105","reps":"8","done":true},{"kg":"105","reps":"8","done":true},{"kg":"105","reps":"8","done":true}],"7|mon|shrug":[{"kg":"110","reps":"10","done":true},{"kg":"110","reps":"9","done":true},{"kg":"110","reps":"8","done":true}],"7|mon|rdfly":[{"kg":"60","reps":"12","done":true},{"kg":"60","reps":"11","done":true},{"kg":"60","reps":"10","done":true}],"7|mon|calf":[{"kg":"0","reps":"20","done":true},{"kg":"0","reps":"15","done":true},{"kg":"0","reps":"15","done":true}],"7|mon|lat":[{"kg":"17.5","reps":"9","done":true},{"kg":"15","reps":"9","done":true},{"kg":"15","reps":"9","done":true}],"7|mon|curl":[{"kg":"40","reps":"12","done":true},{"kg":"40","reps":"8","done":true},{"kg":"35","reps":"8","done":true}],"7|mon|skull":[{"kg":"35","reps":"8","done":true},{"kg":"30","reps":"10","done":true},{"kg":"30","reps":"6","done":true}],"7|mon|wcurl":[{"kg":"60","reps":"","done":true},{"kg":"55","reps":"","done":true},{"kg":"50","reps":"","done":true}],"7|mon|wext":[{"kg":"20","reps":"","done":true},{"kg":"15","reps":"","done":true},{"kg":"15","reps":"","done":true}],"7|wed|incdb":[{"kg":"25","reps":"15","done":true},{"kg":"25","reps":"12","done":true},{"kg":"22.5","reps":"10","done":true}],"7|wed|pulldown":[{"kg":"70","reps":"13","done":true},{"kg":"60","reps":"11","done":true},{"kg":"55","reps":"10","done":true}],"7|wed|seatcurl":[{"kg":"62.5","reps":"13","done":true},{"kg":"57.5","reps":"11","done":true},{"kg":"50","reps":"15","done":true}],"7|wed|lat":[{"kg":"10","reps":"17","done":true},{"kg":"7.5","reps":"17","done":true},{"kg":"6","reps":"16","done":true}],"7|wed|rdfly":[{"kg":"50","reps":"14","done":true},{"kg":"40","reps":"13","done":true},{"kg":"30","reps":"11","done":true}],"7|wed|calf":[{"kg":"0","reps":"25","done":true},{"kg":"0","reps":"","done":true},{"kg":"0","reps":"","done":true}],"7|wed|wcurl":[{"kg":"50","reps":"20","done":true},{"kg":"45","reps":"15","done":true},{"kg":"40","reps":"10","done":true}],"7|wed|curl":[{"kg":"50","reps":"17","done":true},{"kg":"40","reps":"15","done":true},{"kg":"35","reps":"10","done":true}],"7|wed|pushdown":[{"kg":"40","reps":"17","done":true},{"kg":"35","reps":"15","done":true},{"kg":"30","reps":"9","done":true}],"7|wed|wext":[{"kg":"10","reps":"25","done":true},{"kg":"10","reps":"16","done":true},{"kg":"10","reps":"12","done":true}],"7|fri|chestpress":[{"kg":"78","reps":"13","done":true},{"kg":"76.5","reps":"8","done":true},{"kg":"70","reps":"8","done":true}],"7|fri|csrow":[{"kg":"66.25","reps":"12","done":true},{"kg":"65","reps":"8","done":true},{"kg":"60","reps":"7","done":true}],"7|fri|dbpress":[{"kg":"26","reps":"8","done":true},{"kg":"24","reps":"10","done":true},{"kg":"22","reps":"8","done":true}],"7|fri|lyingcurl":[{"kg":"56.5","reps":"13","done":true},{"kg":"56.5","reps":"12","done":true},{"kg":"56.5","reps":"8","done":true}],"7|fri|shrug":[{"kg":"36","reps":"15","done":true},{"kg":"36","reps":"14","done":true},{"kg":"36","reps":"12","done":true}],"7|fri|lat":[{"kg":"13.75","reps":"15","done":true},{"kg":"13.75","reps":"12","done":true},{"kg":"12.5","reps":"12","done":true}],"7|fri|rdfly":[{"kg":"10","reps":"10","done":true},{"kg":"7.5","reps":"10","done":true},{"kg":"7.5","reps":"10","done":true}],"7|fri|ohext":[{"kg":"45","reps":"12","done":true},{"kg":"40","reps":"10","done":true},{"kg":"35","reps":"10","done":true}],"7|fri|curl":[{"kg":"15","reps":"13","done":true},{"kg":"12.5","reps":"10","done":true},{"kg":"10","reps":"7","done":true}],"7|fri|wext":[{"kg":"17.5","reps":"","done":true},{"kg":"15","reps":"","done":true},{"kg":"15","reps":"","done":true}],"7|fri|wcurl":[{"kg":"57.5","reps":"","done":true},{"kg":"55","reps":"","done":true},{"kg":"55","reps":"","done":true}],"7|fri|calf":[{"kg":"150","reps":"18","done":true},{"kg":"150","reps":"15","done":true},{"kg":"150","reps":"12","done":true}],"8|mon|squat":[{"kg":"60","reps":"5","done":true}],"8|mon|pullup":[{"kg":"0","reps":"5","done":true}],"8|mon|bench":[{"kg":"70","reps":"8","done":true}],"8|mon|ohp":[{"kg":"40","reps":"10","done":true}],"8|mon|rdl":[{"kg":"100","reps":"8","done":true}],"8|mon|shrug":[{"kg":"100","reps":"10","done":true}],"8|mon|lat":[{"kg":"15","reps":"12","done":true}],"8|mon|rdfly":[{"kg":"50","reps":"10","done":true}],"8|mon|skull":[{"kg":"30","reps":"12","done":true}],"8|mon|curl":[{"kg":"30","reps":"16","done":true}],"8|mon|calf":[{"kg":"0","reps":"25","done":true}],"8|mon|wcurl":[{"kg":"60","reps":"17","done":true}],"8|mon|wext":[{"kg":"20","reps":"15","done":true}],"8|wed|legpress":[{"kg":"60","reps":"20","done":true}],"8|wed|incdb":[{"kg":"25","reps":"13","done":true}],"8|wed|pulldown":[{"kg":"60","reps":"15","done":true}],"8|wed|seatcurl":[{"kg":"60","reps":"15","done":true}],"8|wed|lat":[{"kg":"10","reps":"15","done":true}],"8|wed|rdfly":[{"kg":"40","reps":"20","done":true}],"8|wed|curl":[{"kg":"25","reps":"16","done":true}],"8|wed|pushdown":[{"kg":"25","reps":"14","done":true}],"8|wed|calf":[{"kg":"0","reps":"20","done":true}],"8|wed|wcurl":[{"kg":"50","reps":"","done":true}],"8|wed|wext":[{"kg":"10","reps":"","done":true}],"8|fri|hack":[{"kg":"100","reps":"15","done":true}],"8|fri|chestpress":[{"kg":"78","reps":"13","done":true}],"8|fri|csrow":[{"kg":"66.25","reps":"12","done":true}],"8|fri|dbpress":[{"kg":"25","reps":"12","done":true}],"8|fri|lyingcurl":[{"kg":"56.5","reps":"12","done":true}],"8|fri|shrug":[{"kg":"36","reps":"15","done":true}],"8|fri|lat":[{"kg":"13.75","reps":"12","done":true}],"8|fri|rdfly":[{"kg":"10","reps":"10","done":true}],"8|fri|curl":[{"kg":"14","reps":"13","done":true}],"8|fri|ohext":[{"kg":"45","reps":"12","done":true}],"8|fri|wcurl":[{"kg":"55","reps":"15","done":true}],"8|fri|wext":[{"kg":"20","reps":"15","done":true}],"8|fri|calf":[{"kg":"0","reps":"17","done":true}],"9|mon|squat":[{"kg":"60","reps":"5","done":true},{"kg":"60","reps":"5","done":true}],"9|mon|pullup":[{"kg":"0","reps":"8","done":true},{"kg":"0","reps":"5","done":true}],"9|mon|bench":[{"kg":"75","reps":"6","done":true},{"kg":"70","reps":"8","done":true}],"9|mon|ohp":[{"kg":"50","reps":"8","done":true},{"kg":"50","reps":"5","done":true}],"9|mon|rdl":[{"kg":"105","reps":"10","done":true},{"kg":"105","reps":"10","done":true}],"9|mon|shrug":[{"kg":"110","reps":"13","done":true},{"kg":"110","reps":"11","done":true}],"9|mon|lat":[{"kg":"15","reps":"15","done":true},{"kg":"15","reps":"12","done":true}],"9|mon|rdfly":[{"kg":"60","reps":"10","done":true},{"kg":"50","reps":"11","done":true}],"9|mon|curl":[{"kg":"40","reps":"13","done":true},{"kg":"40","reps":"10","done":true}],"9|mon|skull":[{"kg":"30","reps":"14","done":true},{"kg":"30","reps":"10","done":true}],"9|mon|calf":[{"kg":"0","reps":"25","done":true},{"kg":"0","reps":"20","done":true}],"9|mon|wcurl":[{"kg":"60","reps":"14","done":true},{"kg":"55","reps":"14","done":true}],"9|mon|wext":[{"kg":"20","reps":"13","done":true},{"kg":"15","reps":"11","done":true}],"9|wed|legpress":[{"kg":"60","reps":"20","done":true},{"kg":"82.5","reps":"20","done":true}],"9|wed|incdb":[{"kg":"25","reps":"16","done":true},{"kg":"25","reps":"13","done":true}],"9|wed|pulldown":[{"kg":"70","reps":"14","done":true},{"kg":"60","reps":"12","done":true}],"9|wed|seatcurl":[{"kg":"65","reps":"15","done":true},{"kg":"60","reps":"16","done":true}],"9|wed|lat":[{"kg":"10","reps":"17","done":true},{"kg":"7.5","reps":"15","done":true}],"9|wed|rdfly":[{"kg":"40","reps":"15","done":true},{"kg":"30","reps":"20","done":true}],"9|wed|calf":[{"kg":"0","reps":"33","done":true},{"kg":"0","reps":"25","done":true}],"9|wed|curl":[{"kg":"50","reps":"18","done":true},{"kg":"45","reps":"13","done":true}],"9|wed|pushdown":[{"kg":"40","reps":"17","done":true},{"kg":"35","reps":"14","done":true}],"9|wed|wcurl":[{"kg":"50","reps":"20","done":true},{"kg":"45","reps":"12","done":true}],"9|wed|wext":[{"kg":"10","reps":"21","done":true},{"kg":"10","reps":"20","done":true}]},"names":{"fri|csrow":"Land Mine Row","wed|calf":"Standing Calf raise Double leg","fri|hack":"Leg Press","fri|lat":"Cable lateral raise","wed|rdfly":"Rear delt Machine fly","mon|rdfly":"Rear delt machine fly / Rear delt cable","fri|rdfly":"Rear delt machine fly/Rear delt cable fly single arm","wed|legpress":"Leg Extensions"},"noSS":{"fri|B":true,"fri|A":true,"mon|B":true,"mon|A":true,"wed|A":true},"lnames":{"1|mon|bench":"Flat barbell bench press","1|mon|pullup":"Weighted pull-up","1|mon|ohp":"Standing overhead press","1|mon|rdl":"Romanian deadlift","1|mon|shrug":"Barbell shrug","1|mon|lat":"Cable lateral raise","1|mon|rdfly":"Rear delt machine fly","1|mon|curl":"EZ bar curl","1|mon|skull":"EZ bar skull crusher","1|mon|calf":"Standing calf raise","1|mon|wcurl":"Cable wrist curl","1|mon|wext":"Cable wrist extension","1|wed|legpress":"Leg press","1|wed|incdb":"Incline dumbbell press","1|wed|pulldown":"Lat pulldown","1|wed|seatcurl":"Seated leg curl","1|wed|lat":"Dumbbell lateral raise","1|wed|curl":"Cable curl","1|wed|pushdown":"Cable pushdown","1|wed|rdfly":"Rear delt machine fly","1|wed|wcurl":"Cable wrist curl","1|wed|wext":"Cable wrist extension","1|wed|calf":"Standing Calf raise","1|mon|squat":"Back squat","1|fri|hack":"Hack squat","1|fri|chestpress":"Machine chest press","1|fri|csrow":"Land Mine Row","1|fri|dbpress":"Seated dumbbell shoulder press","1|fri|lyingcurl":"Lying leg curl","1|fri|shrug":"Dumbbell or Smith machine shrug","1|fri|lat":"Cable lateral raise","1|fri|rdfly":"Rear delt machine fly","1|fri|curl":"Incline dumbbell curl","1|fri|calf":"Leg press calf raise","1|fri|ohext":"Overhead cable extension","1|fri|wcurl":"Cable wrist curl","1|fri|wext":"Cable wrist extension","2|mon|squat":"Back squat","2|mon|bench":"Flat barbell bench press","2|mon|pullup":"Weighted pull-up","2|mon|ohp":"Standing overhead press","2|mon|rdl":"Romanian deadlift","2|mon|shrug":"Barbell shrug","2|mon|lat":"Cable lateral raise","2|mon|curl":"EZ bar curl","2|mon|skull":"EZ bar skull crusher","2|mon|rdfly":"Rear delt machine fly","2|mon|calf":"Standing calf raise","2|mon|wcurl":"Cable wrist curl","2|mon|wext":"Cable wrist extension","2|wed|legpress":"Leg press","2|wed|incdb":"Incline dumbbell press","2|wed|pulldown":"Lat pulldown","2|wed|seatcurl":"Seated leg curl","2|wed|lat":"Dumbbell lateral raise","2|wed|rdfly":"Rear delt cable fly","2|wed|curl":"Cable curl","2|wed|pushdown":"Rope pushdown","2|wed|wcurl":"Cable wrist curl","2|wed|wext":"Cable wrist extension","2|wed|calf":"Standing Calf raise","2|fri|hack":"Leg Press","2|fri|chestpress":"Machine chest press","2|fri|csrow":"Land Mine Row","2|fri|dbpress":"Seated dumbbell shoulder press","2|fri|shrug":"Dumbbell or Smith machine shrug","2|fri|lat":"Cable lateral raise","2|fri|lyingcurl":"Lying leg curl","2|fri|rdfly":"Rear delt machine fly","2|fri|curl":"Incline dumbbell curl","2|fri|ohext":"Overhead cable extension","2|fri|calf":"Leg press calf raise","2|fri|wcurl":"Cable wrist curl","2|fri|wext":"Cable wrist extension","3|mon|squat":"Back squat","3|mon|bench":"Flat barbell bench press","3|mon|pullup":"Weighted pull-up","3|mon|ohp":"Standing overhead press","3|mon|rdl":"Romanian deadlift","3|mon|shrug":"Barbell shrug","3|mon|lat":"Cable lateral raise","3|mon|rdfly":"Rear delt machine fly","3|mon|curl":"EZ bar curl","3|mon|skull":"EZ bar skull crusher","3|mon|wcurl":"Cable wrist curl","3|mon|wext":"Cable wrist extension","3|mon|calf":"Standing calf raise","3|wed|legpress":"Leg press","3|wed|incdb":"Incline dumbbell press","3|wed|pulldown":"Lat pulldown","3|wed|seatcurl":"Seated leg curl","3|wed|lat":"Dumbbell lateral raise","3|wed|rdfly":"Rear delt cable fly","3|wed|curl":"Cable curl","3|wed|pushdown":"Rope pushdown","3|wed|calf":"Standing Calf raise","3|wed|wcurl":"Cable wrist curl","3|wed|wext":"Cable wrist extension","3|fri|hack":"Leg Press","3|fri|chestpress":"Machine chest press","3|fri|csrow":"Land Mine Row","3|fri|dbpress":"Seated dumbbell shoulder press","3|fri|lyingcurl":"Lying leg curl","3|fri|shrug":"Dumbbell or Smith machine shrug","3|fri|curl":"Incline dumbbell curl","3|fri|lat":"Cable lateral raise","3|fri|ohext":"Overhead cable extension","3|fri|rdfly":"Rear delt machine fly","3|fri|calf":"Leg press calf raise","3|fri|wcurl":"Cable wrist curl","3|fri|wext":"Cable wrist extension","4|mon|bench":"Flat barbell bench press","4|mon|pullup":"Weighted pull-up","4|mon|ohp":"Standing overhead press","4|mon|rdl":"Romanian deadlift","4|mon|shrug":"Barbell shrug","4|mon|lat":"Cable lateral raise","4|mon|rdfly":"Rear delt machine fly","4|mon|curl":"EZ bar curl","4|mon|skull":"EZ bar skull crusher","4|mon|wcurl":"Cable wrist curl","4|mon|wext":"Cable wrist extension","4|mon|calf":"Standing calf raise","4|wed|legpress":"Leg press","4|mon|squat":"Back squat","4|wed|incdb":"Incline dumbbell press","4|wed|seatcurl":"Seated leg curl","4|wed|pulldown":"Lat pulldown","4|wed|lat":"Dumbbell lateral raise","4|wed|pushdown":"Rope pushdown","4|wed|curl":"Cable curl","4|wed|rdfly":"Rear delt Machine fly","4|wed|calf":"Standing Calf raise","4|wed|wcurl":"Cable wrist curl","4|wed|wext":"Cable wrist extension","4|fri|hack":"Leg Press","4|fri|chestpress":"Machine chest press","4|fri|csrow":"Land Mine Row","4|fri|dbpress":"Seated dumbbell shoulder press","4|fri|lyingcurl":"Lying leg curl","4|fri|shrug":"Dumbbell or Smith machine shrug","4|fri|lat":"Cable lateral raise","4|fri|rdfly":"Rear delt machine fly","4|fri|curl":"Incline dumbbell curl","4|fri|ohext":"Overhead cable extension","4|fri|calf":"Leg press calf raise","4|fri|wcurl":"Cable wrist curl","4|fri|wext":"Cable wrist extension","5|mon|squat":"Back squat","5|mon|bench":"Flat barbell bench press","5|mon|pullup":"Weighted pull-up","5|mon|ohp":"Standing overhead press","5|mon|rdl":"Romanian deadlift","5|mon|shrug":"Barbell shrug","5|mon|lat":"Cable lateral raise","5|mon|rdfly":"Rear delt machine fly / Rear delt cable","5|mon|skull":"EZ bar skull crusher","5|mon|calf":"Standing calf raise","5|mon|wcurl":"Cable wrist curl","5|mon|wext":"Cable wrist extension","5|mon|curl":"EZ bar curl","5|fri|chestpress":"Machine chest press","5|fri|csrow":"Land Mine Row","5|fri|dbpress":"Seated dumbbell shoulder press","5|fri|lyingcurl":"Lying leg curl","5|fri|shrug":"Dumbbell or Smith machine shrug","5|fri|lat":"Cable lateral raise","5|fri|rdfly":"Rear delt machine fly","5|fri|curl":"Incline dumbbell curl","5|fri|ohext":"Overhead cable extension","5|fri|calf":"Leg press calf raise","5|fri|wcurl":"Cable wrist curl","5|fri|wext":"Cable wrist extension","5|wed|incdb":"Incline dumbbell press","5|wed|pulldown":"Lat pulldown","5|wed|seatcurl":"Seated leg curl","5|wed|lat":"Dumbbell lateral raise","5|wed|rdfly":"Rear delt Machine fly","5|wed|curl":"Cable curl","5|wed|pushdown":"Rope pushdown","5|wed|calf":"Standing Calf raise","5|wed|wcurl":"Cable wrist curl","5|wed|wext":"Cable wrist extension","6|mon|bench":"Flat barbell bench press","6|mon|pullup":"Weighted pull-up","6|mon|ohp":"Standing overhead press","6|mon|rdl":"Romanian deadlift","6|mon|shrug":"Barbell shrug","6|mon|lat":"Cable lateral raise","6|mon|rdfly":"Rear delt machine fly / Rear delt cable","6|mon|curl":"EZ bar curl","6|mon|skull":"EZ bar skull crusher","6|mon|calf":"Standing calf raise","6|mon|wcurl":"Cable wrist curl","6|mon|wext":"Cable wrist extension","6|wed|incdb":"Incline dumbbell press","6|wed|pulldown":"Lat pulldown","6|wed|seatcurl":"Seated leg curl","6|wed|lat":"Dumbbell lateral raise","6|wed|rdfly":"Rear delt Machine fly","6|wed|curl":"Cable curl","6|wed|pushdown":"Rope pushdown","6|wed|wcurl":"Cable wrist curl","6|wed|wext":"Cable wrist extension","6|wed|calf":"Standing Calf raise","6|fri|chestpress":"Machine chest press","6|fri|csrow":"Land Mine Row","6|fri|dbpress":"Seated dumbbell shoulder press","6|fri|lyingcurl":"Lying leg curl","6|fri|shrug":"Dumbbell or Smith machine shrug","6|fri|rdfly":"Rear delt machine fly","6|fri|lat":"Cable lateral raise","6|fri|ohext":"Overhead cable extension","6|fri|curl":"Incline dumbbell curl","6|fri|calf":"Leg press calf raise","6|fri|wcurl":"Cable wrist curl","6|fri|wext":"Cable wrist extension","7|mon|pullup":"Weighted pull-up","7|mon|bench":"Flat barbell bench press","7|mon|ohp":"Standing overhead press","7|mon|rdl":"Romanian deadlift","7|mon|shrug":"Barbell shrug","7|mon|rdfly":"Rear delt machine fly / Rear delt cable","7|mon|calf":"Standing calf raise","7|mon|lat":"Cable lateral raise","7|mon|curl":"EZ bar curl","7|mon|skull":"EZ bar skull crusher","7|mon|wcurl":"Cable wrist curl","7|mon|wext":"Cable wrist extension","7|wed|incdb":"Incline dumbbell press","7|wed|pulldown":"Lat pulldown","7|wed|seatcurl":"Seated leg curl","7|wed|lat":"Dumbbell lateral raise","7|wed|rdfly":"Rear delt Machine fly","7|wed|calf":"Standing Calf raise","7|wed|wcurl":"Cable wrist curl","7|wed|curl":"Cable curl","7|wed|pushdown":"Rope pushdown","7|wed|wext":"Cable wrist extension","7|fri|chestpress":"Machine chest press","7|fri|csrow":"Land Mine Row","7|fri|dbpress":"Seated dumbbell shoulder press","7|fri|lyingcurl":"Lying leg curl","7|fri|shrug":"Dumbbell or Smith machine shrug","7|fri|lat":"Cable lateral raise","7|fri|rdfly":"Rear delt machine fly/Rear delt cable fly single arm","7|fri|ohext":"Overhead cable extension","7|fri|curl":"Incline dumbbell curl","7|fri|wext":"Cable wrist extension","7|fri|wcurl":"Cable wrist curl","7|fri|calf":"Leg press calf raise","8|mon|squat":"Back squat","8|mon|pullup":"Weighted pull-up","8|mon|bench":"Flat barbell bench press","8|mon|ohp":"Standing overhead press","8|mon|rdl":"Romanian deadlift","8|mon|shrug":"Barbell shrug","8|mon|lat":"Cable lateral raise","8|mon|rdfly":"Rear delt machine fly / Rear delt cable","8|mon|skull":"EZ bar skull crusher","8|mon|curl":"EZ bar curl","8|mon|calf":"Standing calf raise","8|mon|wcurl":"Cable wrist curl","8|mon|wext":"Cable wrist extension","8|wed|legpress":"Leg Extensions","8|wed|incdb":"Incline dumbbell press","8|wed|pulldown":"Lat pulldown","8|wed|seatcurl":"Seated leg curl","8|wed|lat":"Dumbbell lateral raise","8|wed|rdfly":"Rear delt Machine fly","8|wed|curl":"Cable curl","8|wed|pushdown":"Rope pushdown","8|wed|calf":"Standing Calf raise","8|wed|wcurl":"Cable wrist curl","8|wed|wext":"Cable wrist extension","8|fri|hack":"Leg Press","8|fri|chestpress":"Machine chest press","8|fri|csrow":"Land Mine Row","8|fri|dbpress":"Seated dumbbell shoulder press","8|fri|lyingcurl":"Lying leg curl","8|fri|shrug":"Dumbbell or Smith machine shrug","8|fri|lat":"Cable lateral raise","8|fri|rdfly":"Rear delt machine fly/Rear delt cable fly single arm","8|fri|curl":"Incline dumbbell curl","8|fri|ohext":"Overhead cable extension","8|fri|wcurl":"Cable wrist curl","8|fri|wext":"Cable wrist extension","8|fri|calf":"Leg press calf raise","9|mon|squat":"Back squat","9|mon|pullup":"Weighted pull-up","9|mon|bench":"Flat barbell bench press","9|mon|ohp":"Standing overhead press","9|mon|rdl":"Romanian deadlift","9|mon|shrug":"Barbell shrug","9|mon|lat":"Cable lateral raise","9|mon|rdfly":"Rear delt machine fly / Rear delt cable","9|mon|curl":"EZ bar curl","9|mon|skull":"EZ bar skull crusher","9|mon|calf":"Standing calf raise","9|mon|wcurl":"Cable wrist curl","9|mon|wext":"Cable wrist extension","9|wed|legpress":"Leg Extensions","9|wed|incdb":"Incline dumbbell press","9|wed|pulldown":"Lat pulldown","9|wed|seatcurl":"Seated leg curl","9|wed|lat":"Dumbbell lateral raise","9|wed|rdfly":"Rear delt Machine fly","9|wed|calf":"Standing Calf raise Double leg","9|wed|curl":"Cable curl","9|wed|pushdown":"Rope pushdown","9|wed|wcurl":"Cable wrist curl","9|wed|wext":"Cable wrist extension"},"inj":{}};
 
 const PROG = {1:[1,1,1],2:[2,1,1],3:[2,1,2],4:[2,2,2],5:[3,2,2],6:[3,2,3],7:[3,3,3],8:[1,1,1]};
 const EFFORT = {
@@ -278,13 +303,106 @@ function activeInj(){ return Object.keys(state.inj).filter(k => state.inj[k] && 
 // Weeks 1-8 are the ramp-up. From week 9, repeat weeks 4, 5, 6, 7 then a deload, over and over.
 function phase(w){ return w <= 8 ? w : [4,5,6,7,8][(w-9) % 5]; }
 
-let state = {week:1, day:'mon', logs:{}, names:{}, noSS:{}, lnames:{}, inj:{}};
+const OBJ_KEYS = ['logs','names','noSS','lnames','inj','cur','tracks','daily','dates','dateEst','skip'];
+function blank(){ const s = {week:1, day:'mon'}; OBJ_KEYS.forEach(k => s[k] = {}); return s; }
+let state = blank();
 let mem = null;
-function fixState(){ state.logs = state.logs || {}; state.names = state.names || {}; state.noSS = state.noSS || {}; state.lnames = state.lnames || {}; state.inj = state.inj || {}; }
+function fixState(){
+  OBJ_KEYS.forEach(k => { if (!state[k] || typeof state[k] !== 'object') state[k] = {}; });
+  migrate();
+}
 function load(){
-  try { const s = JSON.parse(localStorage.getItem(KEY)); if (s) state = Object.assign(state, s); }
-  catch(e){ if (mem) state = mem; }
+  let s = null;
+  try { s = JSON.parse(localStorage.getItem(KEY)); }
+  catch(e){ if (mem) s = mem; }
+  // First run on a new device or address: start from the built-in copy of the log.
+  if (!s || !s.logs || !Object.keys(s.logs).length) s = (typeof SEED !== 'undefined') ? JSON.parse(JSON.stringify(SEED)) : null;
+  if (s) state = Object.assign(blank(), s);
   fixState();
+  save();
+}
+
+// ---- Exercise tracks ----
+// Each exercise slot (day|id) can hold several exercises over time. Each has its own
+// track id and its own history. The default track id is the slot id itself, so old logs keep working.
+function trk(ref){ return state.tracks[ref] || (state.tracks[ref] = {}); }
+function curT(d,id){ return state.cur[d + '|' + id] || id; }
+function tracksOf(d,id){ const t = Object.assign({}, state.tracks[d + '|' + id] || {}); if (!(id in t)) t[id] = findItem(d,id).n; return t; }
+function tName(d,id,t){ const m = state.tracks[d + '|' + id]; return (m && m[t]) || (t === id ? findItem(d,id).n : t); }
+function slotOf(t){ return t.split('.')[0]; }
+function hasLog(w,d,t){ const a = state.logs[key(w,d,t)]; return !!(a && a.some(s => s.kg || s.reps || s.done)); }
+function trackAt(w,d,id){
+  const c = curT(d,id);
+  if (hasLog(w,d,c)) return c;
+  return Object.keys(tracksOf(d,id)).find(t => hasLog(w,d,t)) || c;
+}
+function newTrackId(d,id){
+  const ids = Object.keys(tracksOf(d,id)); let n = 2;
+  while (ids.includes(id + '.' + n)) n++;
+  return id + '.' + n;
+}
+function latestTrack(d,id){
+  let best = curT(d,id), bw = 0;
+  Object.keys(tracksOf(d,id)).forEach(t => { for (let w = MAXW; w >= 1; w--) if (hasLog(w,d,t)){ if (w > bw){ bw = w; best = t; } break; } });
+  return best;
+}
+
+// ---- One-off clean-up of logs from the first version of the app ----
+function splitTrack(d, id, baseName, newName, test, curMode){
+  if (!findItem(d,id)) return;
+  const ref = d + '|' + id;
+  let nt = null;
+  for (let w = 1; w <= MAXW; w++){
+    const k = key(w,d,id), a = state.logs[k];
+    if (!a || !test(a, state.lnames[k] || '')) continue;
+    if (!nt){ nt = newTrackId(d,id); trk(ref)[nt] = newName; }
+    const nk = key(w,d,nt);
+    state.logs[nk] = a; delete state.logs[k];
+    state.lnames[nk] = newName; delete state.lnames[k];
+  }
+  if (!nt) return;
+  if (baseName) trk(ref)[id] = baseName;
+  if (curMode === 'new') state.cur[ref] = nt;
+  if (curMode === 'latest') state.cur[ref] = latestTrack(d,id);
+}
+function ymd(dt){ return dt.getFullYear() + '-' + String(dt.getMonth()+1).padStart(2,'0') + '-' + String(dt.getDate()).padStart(2,'0'); }
+function migrate(){
+  if (state.v >= 2) return;
+  // Old custom names become the name of the default track.
+  Object.keys(state.names).forEach(ref => {
+    const [d,id] = ref.split('|');
+    if (DAYS[d] && findItem(d,id)) trk(ref)[id] = state.names[ref];
+  });
+  state.names = {};
+  const kgOf = s => parseFloat(String(s.kg).replace(',', '.'));
+  const light = a => a.some(s => kgOf(s) > 0 && kgOf(s) <= 20);
+  // Wednesday leg press became leg extension.
+  splitTrack('wed','legpress','Leg press','Leg extension', (a,ln) => /exten/i.test(ln), 'new');
+  // Friday quad slot: week 1 was hack squat, then leg press.
+  splitTrack('fri','hack','Leg press','Hack squat', (a,ln) => /hack/i.test(ln), null);
+  // Rear delts: machine and cable were logged under one name. Cable loads are 20 kg or less.
+  splitTrack('mon','rdfly','Rear delt machine fly','Rear delt cable fly', light, 'latest');
+  splitTrack('wed','rdfly','Rear delt machine fly','Rear delt cable fly', light, 'latest');
+  splitTrack('fri','rdfly','Rear delt machine fly','Rear delt cable fly (single arm)', light, 'latest');
+  // A whole day with weights but no reps at all was a skipped day.
+  for (let w = 1; w <= MAXW; w++) ['mon','wed','fri'].forEach(d => {
+    const ks = Object.keys(state.logs).filter(k => k.startsWith(w + '|' + d + '|'));
+    if (ks.length && ks.every(k => state.logs[k].every(s => !s.reps))){
+      ks.forEach(k => { delete state.logs[k]; delete state.lnames[k]; });
+      state.skip[w + '|' + d] = true;
+    }
+  });
+  // Estimated dates for the existing log (week 9 Monday was 23 Nov 2026, no gaps).
+  if (!Object.keys(state.dates).length && Object.keys(state.logs).some(k => k.startsWith('9|mon|'))){
+    const start = new Date(2026, 8, 28);
+    Object.keys(state.logs).forEach(k => {
+      const [w,d] = k.split('|'); const ref = w + '|' + d;
+      if (state.dates[ref]) return;
+      const dt = new Date(start); dt.setDate(start.getDate() + (w-1)*7 + {mon:0,wed:2,fri:4}[d]);
+      state.dates[ref] = ymd(dt); state.dateEst[ref] = true;
+    });
+  }
+  state.v = 2;
 }
 function save(){
   try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){ mem = state; }
@@ -298,6 +416,7 @@ function ensure(k,n){
   while (a.length < n) a.push({kg:'', reps:'', done:false});
   return a;
 }
+// lastFor, prevBest and sessionsFor take a track id, not a slot id.
 function lastFor(w,d,id){
   for (let x = w-1; x >= 1; x--){
     const a = state.logs[key(x,d,id)];
@@ -314,7 +433,7 @@ function e1(kg, reps){
   return r === 1 ? k : k * (1 + r/30);
 }
 function fmtKg(v){ return (Math.round(v*10)/10).toString(); }
-function curName(d,id){ return state.names[d + '|' + id] || findItem(d,id).n; }
+function curName(d,id){ return tName(d,id,curT(d,id)); }
 function prevBest(w,d,id){
   let b = 0;
   for (let x = 1; x < w; x++){
@@ -338,23 +457,31 @@ function sessionsFor(d,id){
   return out;
 }
 function dayDone(w,d){
+  if (state.skip[w + '|' + d]) return false;
   const n = setsFor(w,d);
-  return visibleItems(d).every(it => { const a = getArr(w,d,it.id); for (let i=0;i<n;i++){ if (!a[i] || !a[i].done) return false; } return true; });
+  return visibleItems(d).every(it => { const a = getArr(w,d,trackAt(w,d,it.id)); for (let i=0;i<n;i++){ if (!a[i] || !a[i].done) return false; } return true; });
 }
 
 const $ = id => document.getElementById(id);
 
 function exHTML(it, w, d, n, solo){
-  const k = key(w,d,it.id);
-  const custom = state.names[d + '|' + it.id];
-  const name = custom || it.n;
+  const t = trackAt(w,d,it.id);
+  const k = key(w,d,t);
+  const name = tName(d,it.id,t);
+  const custom = name !== it.n;
   // Split supersets: every exercise gets its own rest, at least 75 s
   const rest = solo ? Math.max(it.rest, 75) : it.rest;
-  const a = getArr(w,d,it.id);
-  const last = lastFor(w,d,it.id);
-  const pb = prevBest(w,d,it.id);
+  const a = getArr(w,d,t);
+  const last = lastFor(w,d,t);
+  const pb = prevBest(w,d,t);
   let lastTxt = '';
-  if (last) lastTxt = '<div class="last">Week ' + last.w + ': <b>' + last.a.map(s => (s.kg||'?') + '×' + (s.reps||'?')).join(', ') + '</b></div>';
+  if (last){
+    lastTxt = '<div class="last">Week ' + last.w + ': <b>' + last.a.map(s => (s.kg||'?') + '×' + (s.reps||'?')).join(', ') + '</b></div>';
+    // Double progression: first set at or past the top of the range means it's time to add weight.
+    const top = parseInt(String(it.r).split('-').pop(), 10);
+    const r0 = parseInt(last.a[0].reps, 10);
+    if (phase(w) !== 8 && top > 0 && r0 >= top) lastTxt += '<div class="up">▲ ' + r0 + ' reps last time, top of the range is ' + top + '. Add weight today.</div>';
+  }
   let rows = '';
   for (let i=0;i<n;i++){
     const s = a[i] || {kg:'',reps:'',done:false};
@@ -369,20 +496,46 @@ function exHTML(it, w, d, n, solo){
   }
   return '<div class="ex"><div class="exhead"><span>' + it.m + '</span><span class="reps">' + it.r + ' reps</span></div>' +
     '<div class="namerow"><div class="exname">' + esc(name) + '</div><div class="btns"><button class="edit" data-hist="' + d + '|' + it.id + '">History</button><button class="edit" data-edit="' + d + '|' + it.id + '">Edit</button></div></div>' +
-    (custom ? '<div class="custom">Changed from: ' + it.n + '</div>' : (it.tip ? '<div class="tip">' + it.tip + '</div>' : '')) +
+    (custom ? '<div class="custom">Program default: ' + esc(it.n) + '</div>' : (it.tip ? '<div class="tip">' + it.tip + '</div>' : '')) +
     lastTxt + rows + '</div>';
 }
 function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 function findItem(d, id){ return DAYS[d].items.find(x => x.id === id); }
-function editName(ref){
+// Edit sheet: fix a name (history kept) or swap to a different exercise (fresh history).
+function openEdit(ref){
   const [d, id] = ref.split('|');
   const it = findItem(d, id);
-  const cur = state.names[ref] || it.n;
-  const v = prompt('Exercise name for ' + DAYS[d].name + ' (' + it.m + ').\nLeave empty to go back to: ' + it.n, cur);
-  if (v === null) return;
-  const t = v.trim();
-  if (!t || t === it.n) delete state.names[ref]; else state.names[ref] = t;
-  save(); render();
+  const c = curT(d,id), all = tracksOf(d,id);
+  $('shTitle').textContent = curName(d,id);
+  $('shSub').textContent = DAYS[d].name + ' (' + DAYS[d].type + ') · ' + it.m + ' slot';
+  let h = '<div class="inote">Renaming keeps the history. Swapping starts a new exercise with its own history and progress graph. The old one is kept and you can switch back any time.</div>';
+  h += '<div class="fld"><label>Fix the name (same exercise)</label><input id="edRename" value="' + esc(tName(d,id,c)) + '"></div>' +
+       '<button class="ghost" data-act="rename" data-ref="' + ref + '">Save name</button>';
+  h += '<div class="fld"><label>Swap to a different exercise</label><input id="edNew" placeholder="e.g. Leg extension, or Cable curl (left stack)"></div>' +
+       '<button class="bigbtn" data-act="swap" data-ref="' + ref + '">Swap exercise</button>';
+  const others = Object.keys(all).filter(t => t !== c);
+  if (others.length){
+    h += '<div class="ig"><h3>Switch back to</h3>' + others.map(t =>
+      '<button class="ghost" style="text-align:left;color:var(--text)" data-act="switch" data-ref="' + ref + '" data-t="' + t + '">' + esc(all[t]) + '</button>').join('') + '</div>';
+  }
+  $('shBody').innerHTML = h;
+  openSheet();
+}
+function editAct(b){
+  const ref = b.dataset.ref, [d, id] = ref.split('|');
+  if (b.dataset.act === 'rename'){
+    const v = $('edRename').value.trim(); if (!v) return;
+    trk(ref)[curT(d,id)] = v;
+  } else if (b.dataset.act === 'swap'){
+    const v = $('edNew').value.trim(); if (!v) return $('edNew').focus();
+    const all = tracksOf(d,id);
+    const same = Object.keys(all).find(t => all[t].toLowerCase() === v.toLowerCase());
+    if (same) state.cur[ref] = same;
+    else { const nt = newTrackId(d,id); trk(ref)[nt] = v; state.cur[ref] = nt; }
+  } else if (b.dataset.act === 'switch'){
+    state.cur[ref] = b.dataset.t;
+  }
+  save(); render(); closeSheet();
 }
 
 function injSummary(d){
@@ -402,8 +555,9 @@ function render(){
   sub.className = 'wksub' + (p === 8 ? ' deload' : '');
 
   $('tabs').innerHTML = ['mon','wed','fri'].map(x =>
-    '<button class="tab' + (x===d?' on':'') + (dayDone(w,x)?' fin':'') + '" data-d="' + x + '"><b>' + DAYS[x].short + '</b><span>' + DAYS[x].type + '</span></button>'
+    '<button class="tab' + (x===d?' on':'') + (dayDone(w,x)?' fin':'') + (state.skip[w+'|'+x]?' skip':'') + '" data-d="' + x + '"><b>' + DAYS[x].short + '</b><span>' + DAYS[x].type + '</span></button>'
   ).join('');
+  const skipped = !!state.skip[w + '|' + d];
 
   let progRows = '';
   for (let x=1;x<=8;x++){
@@ -412,14 +566,15 @@ function render(){
   }
 
   let html = '<div class="info"><div class="row"><span class="type">' + day.name + ': ' + day.type + '</span><span class="sets">' + n + (n===1?' set':' sets') + ' each</span></div>' +
-    '<p>' + EFFORT[p] + '</p><p>' + day.rest + '</p>' + injSummary(d) +
+    '<p>' + EFFORT[p] + '</p><p>' + day.rest + '</p>' + ckSummary() + injSummary(d) +
     '<details><summary>How the progression works</summary>' +
     '<table><tr><th>Week</th><th>Mon</th><th>Wed</th><th>Fri</th><th>Total</th></tr>' + progRows + '</table>' +
     '<p>Front delts and traps are Mon and Fri only, so they top out at 6 a week. From week 9, the block runs weeks 4 to 7 then a deload, and repeats. Don\'t add sets past 9: add weight once you hit the top of the rep range on every set, then drop back to the bottom.</p>' +
     '<p>Grey numbers in the kg box are last time\'s weights. Ticking a set with an empty kg box fills it in for you.</p>' +
     '</details></div>';
 
-  const items = visibleItems(d);
+  const items = skipped ? [] : visibleItems(d);
+  if (skipped) html += '<div class="skipnote">You marked this day as skipped. Tap <b>Undo skip</b> below to log it after all.</div>';
   for (let i=0;i<items.length;){
     const it = items[i];
     if (it.ss){
@@ -438,14 +593,16 @@ function render(){
     } else { html += exHTML(it,w,d,n); i++; }
   }
 
-  html += '<div class="tools"><button id="exp">Back up log</button><label>Restore log<input type="file" id="imp" accept=".json,application/json" hidden></label><button id="clr">Clear this day</button>' + (installEvt ? '<button id="inst">Install app</button>' : '') + '</div>';
+  html += '<div class="tools"><button id="exp">Back up log</button><label>Restore log<input type="file" id="imp" accept=".json,application/json" hidden></label><button id="skp">' + (skipped ? 'Undo skip' : 'Skipped this day') + '</button><button id="clr">Clear this day</button>' + (installEvt ? '<button id="inst">Install app</button>' : '') + '</div>';
   $('main').innerHTML = html;
 }
 
 // Logging
 function markRow(row, s){
-  const [, d, id] = row.dataset.k.split('|');
-  state.lnames[row.dataset.k] = curName(d, id);
+  const [w, d, t] = row.dataset.k.split('|');
+  state.lnames[row.dataset.k] = tName(d, slotOf(t), t);
+  // The first time anything is logged for a session, stamp it with today's date.
+  if (!state.dates[w + '|' + d]) state.dates[w + '|' + d] = ymd(new Date());
   const pb = +row.dataset.pb;
   row.classList.toggle('pr', pb > 0 && e1(s.kg, s.reps) > pb);
 }
@@ -454,7 +611,7 @@ $('main').addEventListener('input', e => {
   const a = ensure(row.dataset.k, +row.dataset.n);
   const s = a[+row.dataset.i];
   if (e.target.classList.contains('kg')) s.kg = e.target.value.trim();
-  if (e.target.classList.contains('rp')) s.reps = e.target.value.trim();
+  if (e.target.classList.contains('rp')){ s.reps = e.target.value.trim(); e.target.classList.remove('need'); }
   markRow(row, s);
   save();
 });
@@ -462,12 +619,18 @@ $('main').addEventListener('input', e => {
 $('main').addEventListener('click', e => {
   if (e.target.id === 'exp') return exportLog();
   if (e.target.id === 'clr') return clearDay();
+  if (e.target.id === 'skp'){
+    const r = state.week + '|' + state.day;
+    if (state.skip[r]) delete state.skip[r]; else state.skip[r] = true;
+    save(); render(); return;
+  }
   if (e.target.id === 'inst' && installEvt){ installEvt.prompt(); installEvt = null; render(); return; }
   if (e.target.closest('#injOpen')) return openInj();
+  if (e.target.closest('#ckOpen')) return openDaily(ymd(new Date()));
   const hb = e.target.closest('[data-hist]');
   if (hb) return openHist(hb.dataset.hist);
   const ed = e.target.closest('[data-edit]');
-  if (ed) return editName(ed.dataset.edit);
+  if (ed) return openEdit(ed.dataset.edit);
   const sp = e.target.closest('[data-split]');
   if (sp){ state.noSS[sp.dataset.split] = true; save(); render(); return; }
   const rj = e.target.closest('[data-rejoin]');
@@ -477,6 +640,8 @@ $('main').addEventListener('click', e => {
   const a = ensure(row.dataset.k, +row.dataset.n);
   const s = a[+row.dataset.i];
   const kgIn = row.querySelector('.kg');
+  // Reps are required before a set can be ticked off.
+  if (!s.done && !s.reps){ const rp = row.querySelector('.rp'); rp.classList.add('need'); rp.focus(); return; }
   s.done = !s.done;
   if (s.done && !s.kg && kgIn.placeholder){ s.kg = kgIn.placeholder; kgIn.value = s.kg; }
   row.classList.toggle('done', s.done);
@@ -496,7 +661,7 @@ $('main').addEventListener('change', e => {
     try {
       const s = JSON.parse(r.result);
       if (!s.logs) throw 0;
-      state = Object.assign({week:1, day:'mon', logs:{}, names:{}, noSS:{}, lnames:{}, inj:{}}, s);
+      state = Object.assign(blank(), s);
       fixState(); save(); render(); alert('Log restored.');
     } catch(err){ alert('That file doesn\'t look like a backup from this app.'); }
   };
@@ -512,7 +677,8 @@ function exportLog(){
 }
 function clearDay(){
   if (!confirm('Clear everything logged for ' + DAYS[state.day].name + ', week ' + state.week + '?')) return;
-  DAYS[state.day].items.forEach(it => delete state.logs[key(state.week, state.day, it.id)]);
+  DAYS[state.day].items.forEach(it => Object.keys(tracksOf(state.day, it.id)).forEach(t => delete state.logs[key(state.week, state.day, t)]));
+  delete state.dates[state.week + '|' + state.day]; delete state.dateEst[state.week + '|' + state.day];
   save(); render();
 }
 
@@ -578,13 +744,19 @@ function pickPoint(ev){
   $('tip').innerHTML = 'Week ' + p.w + ': <b>' + fmtKg(p.best) + ' kg</b> estimated 1RM, from ' + esc(p.bs.kg) + ' kg × ' + esc(p.bs.reps) + (p.pr ? '<span class="badge">PR</span>' : '');
 }
 function openHist(ref){
-  const [d, id] = ref.split('|');
-  const it = findItem(d, id), nm = curName(d, id);
+  const [d, id, tt] = ref.split('|');
+  const t = tt || trackAt(state.week, d, id);
+  const it = findItem(d, id), nm = tName(d, id, t);
   $('shTitle').textContent = nm;
   $('shSub').textContent = DAYS[d].name + ' (' + DAYS[d].type + ') · ' + it.m;
-  const ss = sessionsFor(d, id), valid = ss.filter(s => s.best > 0);
+  const ss = sessionsFor(d, t), valid = ss.filter(s => s.best > 0);
   histPts = [];
   let h = '';
+  const all = tracksOf(d, id);
+  if (Object.keys(all).length > 1){
+    h += '<div class="trk">' + Object.keys(all).map(x =>
+      '<button class="' + (x === t ? 'on' : '') + '" data-hist="' + d + '|' + id + '|' + x + '">' + esc(all[x]) + '</button>').join('') + '</div>';
+  }
   if (!ss.length){
     h = '<div class="empty">Nothing logged for this exercise yet.</div>';
   } else {
@@ -607,11 +779,13 @@ function openHist(ref){
     svg.addEventListener('pointerdown', pickPoint);
     svg.addEventListener('pointermove', ev => { if (ev.buttons || ev.pointerType === 'mouse') pickPoint(ev); });
   }
+  if ($('sheet').classList.contains('open')) { $('sheet').scrollTop = 0; return; }
   $('sheet').classList.add('open'); $('sheet').scrollTop = 0;
   document.body.style.overflow = 'hidden';
   try { history.pushState({sheet: 1}, ''); } catch(e){}
 }
 function openSheet(){
+  if ($('sheet').classList.contains('open')) { $('sheet').scrollTop = 0; return; }
   $('sheet').classList.add('open'); $('sheet').scrollTop = 0;
   document.body.style.overflow = 'hidden';
   try { history.pushState({sheet: 1}, ''); } catch(e){}
@@ -646,14 +820,151 @@ $('shBody').addEventListener('change', e => {
   save(); render(); injSub();
 });
 $('shBody').addEventListener('click', e => {
+  const hb = e.target.closest('[data-hist]'); if (hb) return openHist(hb.dataset.hist);
+  const ea = e.target.closest('[data-act]'); if (ea) return editAct(ea);
+  const sc = e.target.closest('[data-sc]'); if (sc) return setScale(sc);
+  if (e.target.id === 'ckCopy') return copyCheckin();
+  if (e.target.id === 'ckPrev' || e.target.id === 'ckNext'){
+    const dt = new Date(ckDate + 'T12:00:00'); dt.setDate(dt.getDate() + (e.target.id === 'ckNext' ? 1 : -1));
+    return openDaily(ymd(dt));
+  }
   if (e.target.id !== 'injClear') return;
   state.inj = {}; save(); render();
   $('shBody').querySelectorAll('[data-inj]').forEach(c => { c.checked = false; c.closest('.iopt').classList.remove('on'); });
   injSub();
 });
 function hideSheet(){ $('sheet').classList.remove('open'); document.body.style.overflow = ''; }
+function closeSheet(){ if (history.state && history.state.sheet) history.back(); else hideSheet(); }
 $('shClose').onclick = () => { if (history.state && history.state.sheet) history.back(); else hideSheet(); };
 window.addEventListener('popstate', hideSheet);
+
+// ---- Daily check-in ----
+let ckDate = ymd(new Date());
+const SCALES = [
+  {f:'energy', n:'Energy', lo:'flat', hi:'buzzing'},
+  {f:'mood', n:'Mood', lo:'low', hi:'great'},
+  {f:'sore', n:'Soreness', lo:'none', hi:'wrecked'},
+  {f:'knee', n:'Right knee (patellar tendon) pain', lo:'none', hi:'severe', cls:'knee'}
+];
+function num(v){ const x = parseFloat(String(v).replace(',', '.')); return isFinite(x) ? x : null; }
+function dayEntry(dt){ return state.daily[dt] || {}; }
+function shift(dt, n){ const x = new Date(dt + 'T12:00:00'); x.setDate(x.getDate() + n); return ymd(x); }
+function avgBW(end, days){
+  const v = [];
+  for (let i = 0; i < days; i++){ const b = num(dayEntry(shift(end, -i)).bw); if (b) v.push(b); }
+  return v.length ? {avg: v.reduce((a,b) => a+b, 0) / v.length, n: v.length} : null;
+}
+function fmtDate(dt){ return new Date(dt + 'T12:00:00').toLocaleDateString('en-GB', {weekday:'short', day:'numeric', month:'short', year:'numeric'}); }
+function ckSummary(){
+  const e = dayEntry(ymd(new Date()));
+  const doneToday = num(e.bw) || e.energy != null || e.notes;
+  return '<button class="injbtn ckbtn" id="ckOpen">Daily check-in<span>' + (doneToday ? 'Today: ' + (num(e.bw) ? num(e.bw) + ' kg' : 'started') : 'Not done today') + '</span></button>';
+}
+function sessionsOn(dt){
+  const out = [];
+  Object.keys(state.dates).forEach(r => {
+    if (state.dates[r] !== dt) return;
+    const [w, d] = r.split('|');
+    const lines = [];
+    DAYS[d].items.forEach(it => {
+      Object.keys(tracksOf(d, it.id)).forEach(t => {
+        const a = (state.logs[key(w,d,t)] || []).filter(s => s.kg || s.reps);
+        if (a.length) lines.push(tName(d, it.id, t) + ': ' + a.map(s => (num(s.kg) ? s.kg + ' kg' : 'bodyweight') + ' × ' + (s.reps || '?')).join(', '));
+      });
+    });
+    if (lines.length) out.push({w:+w, d, lines});
+  });
+  return out;
+}
+function bwChart(end){
+  const pts = [];
+  for (let i = 27; i >= 0; i--){ const dt = shift(end, -i), b = num(dayEntry(dt).bw); if (b) pts.push({i: 27 - i, b, a: avgBW(dt, 7).avg}); }
+  if (pts.length < 2) return '<div class="empty">Log your weight on two different days to see the trend.</div>';
+  const W = 340, H = 150, L = 34, R = 10, T = 10, B = 18;
+  const vs = pts.flatMap(p => [p.b, p.a]);
+  let lo = Math.min(...vs), hi = Math.max(...vs); const pad = Math.max((hi - lo) * 0.15, 0.5); lo -= pad; hi += pad;
+  const X = i => L + i / 27 * (W - L - R), Y = v => T + (1 - (v - lo) / (hi - lo)) * (H - T - B);
+  let g = '';
+  for (let k = 0; k <= 2; k++){ const v = lo + (hi - lo) * k / 2, y = Y(v);
+    g += '<line x1="' + L + '" x2="' + (W-R) + '" y1="' + y + '" y2="' + y + '" stroke="var(--line)"/><text x="' + (L-5) + '" y="' + (y+3.5) + '" text-anchor="end" font-size="10" fill="var(--muted)">' + v.toFixed(1) + '</text>'; }
+  g += '<text x="' + L + '" y="' + (H-4) + '" font-size="10" fill="var(--muted)">4 weeks ago</text><text x="' + (W-R) + '" y="' + (H-4) + '" text-anchor="end" font-size="10" fill="var(--muted)">today</text>';
+  const dots = pts.map(p => '<circle cx="' + X(p.i) + '" cy="' + Y(p.b) + '" r="3" fill="var(--muted)"/>').join('');
+  const line = '<polyline fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round" points="' + pts.map(p => X(p.i) + ',' + Y(p.a)).join(' ') + '"/>';
+  return '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Bodyweight, last 4 weeks">' + g + dots + line + '</svg><div class="sub" style="margin-top:4px">Grey dots: daily weigh-ins. Orange line: 7-day average.</div>';
+}
+function openDaily(dt){
+  ckDate = dt;
+  const e = dayEntry(dt);
+  $('shTitle').textContent = 'Daily check-in';
+  $('shSub').textContent = fmtDate(dt) + (dt === ymd(new Date()) ? ' (today)' : '');
+  let h = '<div class="row2" style="margin-bottom:8px"><button class="ghost" id="ckPrev" style="margin:0">‹ Previous day</button><button class="ghost" id="ckNext" style="margin:0">Next day ›</button></div>';
+  h += '<div class="row2"><div class="fld"><label>Morning weight (kg)</label><input data-ck="bw" inputmode="decimal" placeholder="95.0" value="' + esc(e.bw || '') + '"></div>' +
+       '<div class="fld"><label>Sleep (hours)</label><input data-ck="sleep" inputmode="decimal" placeholder="7" value="' + esc(e.sleep || '') + '"></div></div>';
+  SCALES.forEach(s => {
+    h += '<div class="fld"><label>' + s.n + ' <span style="float:right">0 ' + s.lo + ' · 10 ' + s.hi + '</span></label><div class="scale ' + (s.cls || '') + '">';
+    for (let v = 0; v <= 10; v++) h += '<button class="' + (e[s.f] === v ? 'on' : '') + '" data-sc="' + s.f + '" data-v="' + v + '">' + v + '</button>';
+    h += '</div></div>';
+  });
+  h += '<div class="fld"><label>Notes: food, how training felt, anything else</label><textarea data-ck="notes" placeholder="e.g. On plan, 185 g protein. Squats felt heavy. Knee a bit tender on stairs.">' + esc(e.notes || '') + '</textarea></div>';
+  const a7 = avgBW(dt, 7), p7 = avgBW(shift(dt, -7), 7);
+  h += '<div class="chart"><h3>Bodyweight</h3>';
+  h += '<div class="stat"><span>7-day average</span><b>' + (a7 ? a7.avg.toFixed(1) + ' kg (' + a7.n + ' weigh-ins)' : 'no data') + '</b></div>';
+  if (a7 && p7) { const ch = a7.avg - p7.avg; h += '<div class="stat"><span>Change vs previous 7 days</span><b>' + (ch > 0 ? '+' : '') + ch.toFixed(2) + ' kg</b></div>'; }
+  h += bwChart(dt) + '</div>';
+  const ss = sessionsOn(dt);
+  if (ss.length) h += '<div class="inote">Training logged this day: ' + ss.map(s => 'week ' + s.w + ' ' + DAYS[s.d].name).join(', ') + '. It will be included when you copy.</div>';
+  h += '<button class="bigbtn" id="ckCopy">Copy check-in for Claude</button><div class="copied" id="ckMsg"></div>';
+  h += '<div class="inote">Paste it into your Body building coach project chat.</div>';
+  $('shBody').innerHTML = h;
+  openSheet();
+}
+function ckSet(f, v){
+  const e = state.daily[ckDate] || (state.daily[ckDate] = {});
+  if (v === '' || v == null) delete e[f]; else e[f] = v;
+  if (!Object.keys(e).length) delete state.daily[ckDate];
+  save();
+}
+function setScale(b){
+  const f = b.dataset.sc, v = +b.dataset.v, e = dayEntry(ckDate);
+  const off = e[f] === v;
+  ckSet(f, off ? null : v);
+  b.parentNode.querySelectorAll('button').forEach(x => x.classList.toggle('on', !off && x === b));
+}
+$('shBody').addEventListener('input', e => {
+  const f = e.target.dataset && e.target.dataset.ck; if (!f) return;
+  ckSet(f, e.target.value.trim());
+  render();
+});
+function checkinText(dt){
+  const e = dayEntry(dt), L = [];
+  L.push('Daily check-in: ' + fmtDate(dt));
+  const a7 = avgBW(dt, 7), p7 = avgBW(shift(dt, -7), 7);
+  let bw = 'Morning weight: ' + (num(e.bw) ? num(e.bw) + ' kg' : 'not logged');
+  if (a7) bw += ' (7-day avg ' + a7.avg.toFixed(1) + ' kg from ' + a7.n + (a7.n === 1 ? ' weigh-in' : ' weigh-ins') + (p7 ? ', previous 7 days ' + p7.avg.toFixed(1) + ' kg' : '') + ')';
+  L.push(bw);
+  const bits = [];
+  if (num(e.sleep)) bits.push('Sleep ' + num(e.sleep) + ' h');
+  SCALES.forEach(s => { if (e[s.f] != null) bits.push((s.f === 'knee' ? 'Knee pain' : s.n) + ' ' + e[s.f] + '/10'); });
+  if (bits.length) L.push(bits.join(' · '));
+  if (e.notes) L.push('Notes: ' + e.notes);
+  const ss = sessionsOn(dt);
+  if (ss.length) ss.forEach(s => {
+    L.push(''); L.push('Training: week ' + s.w + ' ' + DAYS[s.d].name + ' (' + DAYS[s.d].type + ')');
+    s.lines.forEach(x => L.push('- ' + x));
+  });
+  else L.push('Training: rest day');
+  return L.join('\n');
+}
+function copyCheckin(){
+  const txt = checkinText(ckDate), msg = $('ckMsg');
+  const fallback = () => {
+    msg.innerHTML = 'Couldn\'t copy automatically. Select the text below and copy it:<textarea style="width:100%;min-height:160px;margin-top:6px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px">' + esc(txt) + '</textarea>';
+    const ta = msg.querySelector('textarea'); ta.focus(); ta.select();
+  };
+  try {
+    navigator.clipboard.writeText(txt).then(() => { msg.textContent = 'Copied. Paste it into the coach chat.'; }, fallback);
+  } catch(err){ fallback(); }
+}
 
 // Rest timer
 let tEnd = 0, tInt = null, actx = null;

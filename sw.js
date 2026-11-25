@@ -1,6 +1,6 @@
 // Offline support. Serves the saved copy straight away so the app opens with no signal,
 // then quietly fetches any update in the background for next time.
-const CACHE = 'fb3x-v1';
+const CACHE = 'fb3x-v2';
 const FILES = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-maskable-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
